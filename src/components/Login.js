@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "../redux/userSlice";
+import netflix_spinner from "../assets/netflix_spinner.gif";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -76,7 +77,12 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      {
+        isLoading && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <img className="w-20px rounded-md" src={netflix_spinner} alt="loading-spinner"/>
+      </div>
+      }
+      <div className="absolute"> 
         <img
           className="w-[100vw] h-[100vh] bg-cover"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
@@ -85,7 +91,7 @@ const Login = () => {
       </div>
       <form
         onSubmit={getInputData}
-        className="flex flex-col items-center justify-center absolute bg-black opacity-95 w-3/12 mx-auto my-36 left-0 right-0 p-12 rounded-md"
+        className="flex flex-col items-center justify-center absolute my-36 left-0 right-0 w-full max-w-[450px] bg-black bg-opacity-85 rounded-lg p-16 mx-auto"
       >
         <h1 className="text-white text-3xl mb-5 font-bold">
           {isLogin ? "Sign In" : "Sign Up"}
@@ -97,7 +103,7 @@ const Login = () => {
               onChange={(e) => setFullName(e.target.value)}
               type="text"
               placeholder="Full Name"
-              className="outline-none p-3 my-2 rounded-sm bg-gray-800 text-white w-[100%]"
+              className="p-3 my-2 w-full h-12 bg-gray-800 text-white mt-3 border-0 outline-none rounded-md px-5 text-md"
             />
           )}
 
@@ -106,7 +112,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="E-mail"
-            className="outline-none p-3 my-2 rounded-sm bg-gray-800 text-white"
+            className="p-3 my-2 w-full h-12 bg-gray-800 text-white mt-3 border-0 outline-none rounded-md px-5 text-md"
           />
 
           <input
@@ -114,7 +120,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
-            className="outline-none p-3 my-2 rounded-sm bg-gray-800 text-white"
+            className="p-3 my-2 w-full h-12 bg-gray-800 text-white mt-3 border-0 outline-none rounded-md px-5 text-md"
           />
           <button
             type="submit"

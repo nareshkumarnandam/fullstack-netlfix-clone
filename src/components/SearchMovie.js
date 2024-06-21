@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchMovieDetails } from "../redux/searchSlice";
 import { setLoading } from "../redux/userSlice";
 import MovieList from "./MovieList";
+import netflix_spinner from '../assets/netflix_spinner.gif'
 
 const SearchMovie = () => {
   const [searchMovie, setSearchMovie] = useState("");
@@ -50,6 +51,11 @@ const SearchMovie = () => {
           </div>
         </form>
       </div>
+      {
+        isLoading && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <img className="w-20px rounded-md" src={netflix_spinner} alt="loading-spinner"/>
+      </div>
+      }
       {searchedMovie ? (
         <MovieList
           title={movieName}
