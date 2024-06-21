@@ -1,70 +1,207 @@
-# Getting Started with Create React App
+# Netflix Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Netflix Clone is a full-stack web application built with Node.js, Express.js, MongoDB, React.js, and Tailwind CSS. It allows users to browse, search, and discover movies using the TMDB (The Movie Database) API.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Usage](#api-usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Netflix Clone provides a user-friendly interface where users can:
+- Explore popular, upcoming, and top-rated movies.
+- Search for movies by title.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application integrates with the TMDB API to fetch real-time movie data, enhancing the user experience with up-to-date information and imagery.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js
+- Express.js
+- MongoDB
+- React.js
+- Tailwind CSS
+- TMDB API (The Movie Database API)
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Browse Movies**: Discover popular, upcoming, and top-rated movies.
+- **Search Movies**: Search for movies by title.
+- **Responsive Design**: Ensures seamless experience across devices using Tailwind CSS for styling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run this project locally, follow these steps:
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nareshkumarnandam/fullstack-netlfix-clone.git
+   cd movie-library-app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
+- Install server dependencies:
+  ```
+  npm install
+  ```
+- Install client dependencies:
+  ```
+  cd client
+  npm install
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Set up environment variables:
+- Create a `.env` file in the root directory of the project.
+- Define environment variables:
+  ```
+  PORT=5000
+  TMDB_API_KEY=your_tmdb_api_key
+  MONGODB_URI=your_mongodb_connection_string
+  ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Seed initial data (if applicable):
+   ```
+   npm run seed
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To start the server and client:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Start the server:
+   ```
+   npm start
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Start the client (if separate from server):
+    ```
+    cd client
+    npm start
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-### Making a Progressive Web App
+## API Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application interacts with the TMDB API to fetch movie data. API endpoints used include:
+- `/movie/popular`: Fetches popular movies.
+- `/movie/nowplaying`: Fetches now playing movies.
+- `/movie/upcoming`: Fetches upcoming movies.
+- `/movie/top_rated`: Fetches top-rated movies.
+- `/search/movie`: Searches movies by title.
 
-### Advanced Configuration
+Ensure you have a valid TMDB API key and include it in your `.env` file as `TMDB_API_KEY=your_api_key`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Screenshots
 
-### Deployment
+![Screenshot 1](./src/assets/Screenshot%20(11).png)
+![Screenshot 2](./src/assets/Screenshot%20(10).png)
+![Screenshot 3](./src/assets/Screenshot%20(8).png)
+![Screenshot 4](./src/assets/Screenshot%20(9).png)
+![Screenshot 5](./src/assets/Screenshot%20(12).png)
+![Screenshot 6](./src/assets/Screenshot%20(13).png)
+![Screenshot 7](./src/assets/Screenshot%20(14).png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
+1. Fork the repository and create a new branch.
+2. Make your changes and test thoroughly.
+3. Submit a pull request detailing the changes and improvements made.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Netflix Clone Backend API
+=====================================
+
+## Project Overview
+
+The Netflix Clone Backend API facilitates user authentication and content browsing for a movie streaming application. It handles user registration, login/sign-in, and serves content based on user sessions.
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB (or your preferred database)
+- JSON Web Tokens (JWT) for authentication
+- API Endpoints
+- User Routes
+
+- Register User:
+
+- URL: POST /api/v1/user/register Description: Registers a new user in the system. Request Body:
+
+json
+```
+{
+  "fullName": "example",
+  "email": "example@example.com",
+  "password": "password"
+}
+
+- Response:
+
+json
+```
+{
+  "success": true,
+  "message": "User registered successfully"
+}
+
+- Login User:
+
+- URL: POST /api/v1/user/login Description: Logs in an existing user and returns a JWT token for authentication. Request Body:
+
+json
+```
+
+{
+  "email": "example@example.com",
+  "password": "password"
+}
+- Response:
+
+json
+```
+
+{
+  "success": true,
+  "token": "<jwt_token>"
+}
+
+- Browse Content:
+
+- URL: GET /api/v1/user/browse Description: Retrieves the home page content based on the user's session (authentication required).
+
+## Installation
+
+1. Clone the repository:
+
+git clone https://github.com/nareshkumarnandam/netflix-clone-backend.git
+cd netflix-clone-backend
+
+2. Install dependencies:
+
+npm install
+Set up environment variables:
+Create a .env file in the root directory of the project. Define environment variables such as database connection URI, JWT secret, etc.
+
+3. Start the server:
+
+npm start
+The API will be accessible at http://localhost:3000.
+
+## Usage
+Ensure you have MongoDB installed and running. Modify the .env file with your specific configurations before starting the server. Use tools like Postman or curl to interact with the API endpoints.
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
+
+Fork the repository and create a new branch.
+Make your changes and test thoroughly.
+Submit a pull request detailing the changes and improvements made.
