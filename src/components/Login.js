@@ -31,7 +31,7 @@ const Login = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          withCredentials: true,
+          // withCredentials: true,
         });
         console.log(res);
         if (res.data.success) {
@@ -53,7 +53,7 @@ const Login = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          withCredentials: true,
+          // withCredentials: true,
         });
         console.log(res);
         if (res.data.success) {
