@@ -1,4 +1,4 @@
-export const API_END_POINT = "https://fullstack-netlfix-clone.vercel.app/";
+export const API_END_POINT = "https://netflix-clone-backend-1k76.onrender.com/api/v1/user";
 
 export const options = {
   method: "GET",
