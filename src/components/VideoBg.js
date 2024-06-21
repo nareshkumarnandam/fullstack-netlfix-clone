@@ -14,7 +14,7 @@ const VideoBg = ({movieId, bool}) => {
         src={`https://www.youtube.com/embed/${trailerMovie?.key}?si=HorxQfzFY2_TAO1W&autoplay=1&mute=1&loop=1&playlist=${trailerMovie?.key}`}
         title="YouTube video player"
         frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
         allowFullScreen
       ></iframe>
     </div>
